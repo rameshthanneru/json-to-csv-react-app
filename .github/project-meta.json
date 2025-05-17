@@ -1,0 +1,10 @@
+{
+  "name": "json-to-csv-react-app",
+  "description": "A React app to convert pasted or uploaded JSON data to CSV and download the CSV file.",
+  "features": [
+    "Paste JSON data or upload a JSON file",
+    "Convert JSON to CSV",
+    "Download the CSV file",
+    "Modern, attractive, and user-friendly UI"
+  ]
+}
