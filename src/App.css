@@ -1,3 +1,13 @@
+/* Vibrant, modern, and colorful UI for JSON to CSV React App */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%);
+  color: #22223b;
+}
+
 #root {
   max-width: none;
   padding: 0;
@@ -8,14 +18,14 @@
   min-height: 100vh;
 }
 
-body, html, #root {
-  height: 100vh;
+.app-container {
   min-height: 100vh;
-  width: 100vw;
-  min-width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 16px 24px 16px;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 .app-main-layout {
@@ -45,10 +55,13 @@ body, html, #root {
 }
 
 h1 {
-  margin-top: 0;
   font-size: 2.5rem;
-  color: #2d3748;
-  text-align: left;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
@@ -71,6 +84,25 @@ h1 {
   resize: vertical;
 }
 
+textarea, .csv-output {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 12px;
+  border: 2px solid #a1c4fd;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  background: #f7faff;
+  resize: vertical;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus, .csv-output:focus {
+  border: 2px solid #ee0979;
+  outline: none;
+  box-shadow: 0 0 0 2px #ee097933;
+}
+
 .actions {
   display: flex;
   gap: 1rem;
@@ -79,18 +111,26 @@ h1 {
 }
 
 button {
-  background: #2563eb;
+  background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
   color: #fff;
+  font-weight: 700;
   border: none;
-  border-radius: 6px;
-  padding: 0.7em 1.5em;
+  border-radius: 8px;
+  padding: 12px 24px;
   font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(238,9,121,0.08);
+  transition: background 0.2s, transform 0.1s;
 }
-button:hover {
-  background: #1d4ed8;
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background: #bdbdbd;
+  color: #fff;
+  cursor: not-allowed;
 }
 
 .error {
@@ -103,6 +143,16 @@ button:hover {
   max-width: 600px;
 }
 
+.error-message {
+  color: #ee0979;
+  background: #fff0f6;
+  border-left: 4px solid #ee0979;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
 .csv-output-section {
   width: 100%;
   max-width: 600px;
@@ -113,11 +163,20 @@ button:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
-.footer {
+footer {
   margin-top: auto;
   color: #64748b;
   font-size: 1rem;
   padding: 2rem 0 0 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f7faff;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1c4fd;
+  border-radius: 8px;
 }
 
 @media (max-width: 700px) {
@@ -134,5 +193,25 @@ button:hover {
   }
   .json2csv-content {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .converter-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 16px 2px 12px 2px;
+  }
+  .converter-card {
+    padding: 12px 2px;
+  }
+  h1 {
+    font-size: 2rem;
   }
 }
