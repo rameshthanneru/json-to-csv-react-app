@@ -1,5 +1,7 @@
 # JSON to CSV React App
 
+[![Deploy to Vercel](https://github.com/rameshthanneru/json-to-csv-react-app/actions/workflows/deploy-vercel.yml/badge.svg)](https://github.com/rameshthanneru/json-to-csv-react-app/actions/workflows/deploy-vercel.yml)
+
 This project is a modern React app (created with Vite) that allows you to paste or upload JSON data and convert it to CSV for download.
 
 ## Features
